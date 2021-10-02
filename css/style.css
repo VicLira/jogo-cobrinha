@@ -27,8 +27,30 @@ body {
     color: #fff;
 }
 
+.container h2 {
+    font-size: 2.5rem;
+}
+
+.container canvas {
+    border: 5px solid #0e4626;
+}
+
 .gameboard {
+    width: 50%;
+    margin-top: 10px;
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.gameboard button {
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+.pontuacao {
+    text-align: center;
 }
 
 .controls {
@@ -39,7 +61,23 @@ body {
     grid-row-gap: 0px;
 }
 
-.left { grid-area: 1 / 2 / 2 / 3; }
-.up { grid-area: 2 / 1 / 3 / 2; }
-.right { grid-area: 2 / 2 / 3 / 3; }
-.down { grid-area: 2 / 3 / 3 / 4; }
+#left { grid-area: 2 / 1 / 3 / 2; }
+#up { grid-area: 1 / 2 / 2 / 3; }
+#right { grid-area: 2 / 3 / 3 / 4; }
+#down { grid-area: 2 / 2 / 3 / 3; }
+
+@media screen and (max-width: 800px) {
+    .gameboard {
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container canvas {
+        width: 100%;
+    }
+}

@@ -40,6 +40,35 @@ function update (event){
     if(event.keyCode == 40 && direction != "up") direction = "down";
 }
 
+const arrows = document.querySelectorAll(".arrow")
+
+    function arrowDirection(event) {
+        
+        let arrowKeyCode = getKeyCode(event);
+        const arrow = document.querySelector('[data-key="${arrowKeyCode}"]')
+
+        if(arrowKeyCode == 37 && direction != "right") direction = "left";
+        if(arrowKeyCode == 38 && direction != "down") direction = "up";
+        if(arrowKeyCode == 39 && direction != "left") direction = "right";
+        if(arrowKeyCode == 40 && direction != "up") direction = "down";
+
+    }
+
+    function getKeyCode(event) {
+        let keyCode;
+
+        const isKeyboard = event.type === "click"
+        if(isKeyboard) {
+            keyCode = event.target.dataset.key;
+        }
+
+        return keyCode
+    }
+
+    arrows.forEach(function(arrow) {
+        arrow.addEventListener('click', arrowDirection)
+    })
+
 function iniciarJogo(){
     if(snake[0].x > 15 * box && direction == "right") snake[0].x = 0;
     if(snake[0].x < 0 * box && direction == "left") snake[0].x = 16 * box;
@@ -49,7 +78,7 @@ function iniciarJogo(){
     for(i=1;i < snake.length; i++){
         if(snake[0].x == snake[i].x && snake[0].y == snake[i].y){
             clearInterval(jogo);
-            alert("Game Over!!!");
+            swal("Game Over!!!");
         }
     }
 
