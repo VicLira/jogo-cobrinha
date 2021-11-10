@@ -18,4 +18,4 @@ Utilizei este projeto para aprimorar minhas habilidades em javaScript, onde foi 
 
 ## Link:
 
-* https://liraviictor.github.io/jogo-cobrinha/
+* https://viclira.github.io/jogo-cobrinha/
